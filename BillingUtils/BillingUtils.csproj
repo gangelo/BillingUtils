@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8B7A4C4F-E59D-49DB-BA1D-DEC505F72DE5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BillingUtils</RootNamespace>
+    <AssemblyName>BillingUtils</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\Money.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Excel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Excel.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Vbe.Interop, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Office, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Configuration\Configuration.cs" />
+    <Compile Include="Code\Configuration\DayTypeConfiguration.cs" />
+    <Compile Include="Code\Configuration\InvoiceConfiguration.cs" />
+    <Compile Include="Code\Configuration\MiscellaneousConfiguration.cs" />
+    <Compile Include="Code\Configuration\PersonalConfiguration.cs" />
+    <Compile Include="Code\Configuration\RatesConfiguration.cs" />
+    <Compile Include="Code\Configuration\TimesheetConfiguration.cs" />
+    <Compile Include="Code\Constants.cs" />
+    <Compile Include="Code\ContextMenus\ContextMenuEventArgs.cs" />
+    <Compile Include="Code\ContextMenus\TreeViewExContextMenu.cs" />
+    <Compile Include="Code\DayType.cs" />
+    <Compile Include="Code\DefaultImageList.cs" />
+    <Compile Include="Code\Enums\Enums.cs" />
+    <Compile Include="Code\ExcelCell.cs" />
+    <Compile Include="Code\Generators\ExcelGenerator.cs" />
+    <Compile Include="Code\Generators\InvoiceGenerator.cs" />
+    <Compile Include="Code\Generators\TimesheetGenerator.cs" />
+    <Compile Include="Code\Helpers\DayTypes.cs" />
+    <Compile Include="Code\Helpers\Excel.cs" />
+    <Compile Include="Code\Helpers\Misc.cs" />
+    <Compile Include="Code\Helpers\Rates.cs" />
+    <Compile Include="Code\Helpers\TreeViewHelpers.cs" />
+    <Compile Include="Code\Helpers\WinFormControls.cs" />
+    <Compile Include="Code\Helpers\Dates.cs" />
+    <Compile Include="Code\Helpers\Path.cs" />
+    <Compile Include="Code\IXmlable.cs" />
+    <Compile Include="Code\MonthlyTimesheetChangedEventArgs.cs" />
+    <Compile Include="Code\MonthlyTimesheets.cs" />
+    <Compile Include="Code\RangeTimesheets.cs" />
+    <Compile Include="Code\Rate.cs" />
+    <Compile Include="Code\TimesheetChangedEventArgs.cs" />
+    <Compile Include="Code\TimesheetDate.cs" />
+    <Compile Include="Code\RenameFileInfo.cs" />
+    <Compile Include="Code\Timesheet.cs" />
+    <Compile Include="Code\TimesheetDateChangedEventArgs.cs" />
+    <Compile Include="Code\TimesheetMonth.cs" />
+    <Compile Include="Code\YearlyTimesheets.cs" />
+    <Compile Include="Dialogs\FileGenerateConfirmationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\FileGenerateConfirmationDialog.Designer.cs">
+      <DependentUpon>FileGenerateConfirmationDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\InvoiceNumberComfirmationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\InvoiceNumberComfirmationDialog.Designer.cs">
+      <DependentUpon>InvoiceNumberComfirmationDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionsForm.Designer.cs">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RenameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RenameForm.Designer.cs">
+      <DependentUpon>RenameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimesheetDateEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimesheetDateEditForm.Designer.cs">
+      <DependentUpon>TimesheetDateEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimesheetMakerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimesheetMakerForm.Designer.cs">
+      <DependentUpon>TimesheetMakerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimesheetYearlyOverviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimesheetYearlyOverviewForm.Designer.cs">
+      <DependentUpon>TimesheetYearlyOverviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TreeView\TimesheetDateDetailTreeNode.cs" />
+    <Compile Include="UserControls\TreeView\TimesheetDateTreeNode.cs" />
+    <Compile Include="UserControls\TreeView\TimesheetTreeNode.cs" />
+    <Compile Include="UserControls\TreeView\MonthlyTimesheetTreeNode.cs" />
+    <Compile Include="UserControls\TreeView\RootTreeNode.cs" />
+    <Compile Include="UserControls\TimesheetCalculations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TimesheetCalculations.Designer.cs">
+      <DependentUpon>TimesheetCalculations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimesheetDetailContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TimesheetDetailContainer.Designer.cs">
+      <DependentUpon>TimesheetDetailContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TimesheetDetailListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TimesheetDetailListView.Designer.cs">
+      <DependentUpon>TimesheetDetailListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TreeView\TreeNodeEx.cs" />
+    <Compile Include="UserControls\TreeView\TreeViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\TreeView\TreeViewExEventArgs.cs" />
+    <Compile Include="UserControls\TreeView\TreeViewExTimesheetDateTreeNodesCheckedEventArgs.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\FileGenerateConfirmationDialog.resx">
+      <DependentUpon>FileGenerateConfirmationDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\InvoiceNumberComfirmationDialog.resx">
+      <DependentUpon>InvoiceNumberComfirmationDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionsForm.resx">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RenameForm.resx">
+      <DependentUpon>RenameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimesheetDateEditForm.resx">
+      <DependentUpon>TimesheetDateEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimesheetMakerForm.resx">
+      <DependentUpon>TimesheetMakerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimesheetYearlyOverviewForm.resx">
+      <DependentUpon>TimesheetYearlyOverviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TimesheetCalculations.resx">
+      <DependentUpon>TimesheetCalculations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TimesheetDetailContainer.resx">
+      <DependentUpon>TimesheetDetailContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TimesheetDetailListView.resx">
+      <DependentUpon>TimesheetDetailListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\error.png" />
+    <EmbeddedResource Include="Images\success.png" />
+    <EmbeddedResource Include="Images\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\calendar.jpg" />
+    <Content Include="Images\clear.gif" />
+    <Content Include="Images\collapse.gif" />
+    <Content Include="Images\expand.gif" />
+    <Content Include="Images\locked.gif" />
+    <Content Include="Images\Money.ico" />
+    <Content Include="Images\Money.png" />
+    <Content Include="Images\pencil.gif" />
+    <Content Include="Images\property.gif" />
+    <Content Include="Images\Refresh.png" />
+    <Content Include="Images\root.gif" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
